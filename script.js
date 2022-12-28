@@ -8,6 +8,8 @@ function Book(title, author, pages, readYet) {
 }
 
 function createItem(book) {
+  myLibrary.push(book)
+
   const item = document.createElement("div");
   item.classList.add("item");
 
@@ -39,10 +41,6 @@ function createItem(book) {
 
   const grid = document.getElementById("content");
   grid.appendChild(item);
-}
-
-function addBookToLibrary(book) {
-  myLibrary.push(book);
 }
 
 const book1 = new Book("State", "Plato", 500, false);
