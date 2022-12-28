@@ -23,7 +23,7 @@ function createItem(book) {
   author.appendChild(authorText);
   item.appendChild(author);
 
-  const pagesText = document.createTextNode(book.pages);
+  const pagesText = document.createTextNode(`${book.pages} pages`);
   const pages = document.createElement("div");
   pages.classList.add("text");
   pages.appendChild(pagesText);
@@ -50,3 +50,4 @@ const book1 = new Book("State", "Plato", 500, false);
 const book2 = new Book("Rottien Saari", "Jo Nesbø", 700, true);
 
 createItem(book1);
+createItem(book2)
