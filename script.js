@@ -7,13 +7,46 @@ function Book(title, author, pages, readYet) {
   this.readYet = readYet;
 }
 
-function addBookToLibrary(book) {
-  myLibrary.push(book)
+function createItem(book) {
+  const item = document.createElement("div");
+  item.classList.add("item");
+
+  const titleText = document.createTextNode(book.title);
+  const title = document.createElement("div");
+  title.classList.add("text");
+  title.appendChild(titleText);
+  item.appendChild(title);
+
+  const authorText = document.createTextNode(book.author);
+  const author = document.createElement("div");
+  author.classList.add("text");
+  author.appendChild(authorText);
+  item.appendChild(author);
+
+  const pagesText = document.createTextNode(book.pages);
+  const pages = document.createElement("div");
+  pages.classList.add("text");
+  pages.appendChild(pagesText);
+  item.appendChild(pages);
+
+  const readYetText = document.createTextNode(
+    book.readYet ? "Read" : "Not read"
+  );
+  const readYetElement = document.createElement("div");
+  readYetElement.classList.add("text");
+  readYetElement.appendChild(readYetText);
+  item.appendChild(readYetElement);
+
+  const grid = document.getElementById("content");
+  grid.appendChild(item);
 }
 
-const book1 = Book("State", "Plato", 500, false)
+function addBookToLibrary(book) {
+  myLibrary.push(book);
+}
 
-const book2 = Book("Rottien Saari", "Jo Nesbø", 700, true)
+const book1 = new Book("State", "Plato", 500, false);
 
-addBookToLibrary(book1)
-addBookToLibrary(book2)
+const book2 = new Book("Rottien Saari", "Jo Nesbø", 700, true);
+
+createItem(book1);

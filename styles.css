@@ -17,7 +17,7 @@ body {
   grid-row: 1 / 2;
 }
 
-.content {
+#content {
   grid-row: 2 / 3;
   width: 100vw;
 
