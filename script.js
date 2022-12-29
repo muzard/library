@@ -54,3 +54,11 @@ function createCards() {
     createItem(book)
   }
 }
+
+function openForm() {
+  document.getElementById('popupform').style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById('popupform').style.display = "none";
+}
