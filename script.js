@@ -8,8 +8,6 @@ function Book(title, author, pages, readYet) {
 }
 
 function createItem(book) {
-  myLibrary.push(book)
-
   const item = document.createElement("div");
   item.classList.add("item");
 
@@ -34,7 +32,7 @@ function createItem(book) {
   const readYetText = document.createTextNode(
     book.readYet ? "Read" : "Not read"
   );
-  const readYetElement = document.createElement("div");
+  const readYetElement = document.createElement("button");
   readYetElement.classList.add("text");
   readYetElement.appendChild(readYetText);
   item.appendChild(readYetElement);
@@ -47,5 +45,12 @@ const book1 = new Book("State", "Plato", 500, false);
 
 const book2 = new Book("Rottien Saari", "Jo Nesbø", 700, true);
 
-createItem(book1);
-createItem(book2)
+function addBookToLibrary(book) {
+  myLibrary.push(book)
+}
+
+function createCards() {
+  for (let book in myLibrary) {
+    createItem(book)
+  }
+}
